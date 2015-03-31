@@ -6,7 +6,6 @@ $button-fab-border-radius: 50% !default;
 
   &:not([disabled]) {
     &:focus {
-      background-color: '{{background-500-0.2}}';
     }
   }
 
@@ -37,10 +36,10 @@ $button-fab-border-radius: 50% !default;
 
   &.md-raised {
     color: '{{background-contrast}}';
-    background-color: '{{background-50}}';
+    background-color: '{{primary-50}}';
     &:not([disabled]) {
       &:focus {
-        background-color: '{{background-200}}';
+        background-color: '{{primary-50}}';
       }
     }
   }
@@ -83,7 +82,7 @@ $button-fab-border-radius: 50% !default;
   }
   &.md-raised[disabled],
   &.md-fab[disabled] {
-    background-color: '{{foreground-4}}';
+    background-color: 'transparent';
   }
   &[disabled] {
     background-color: 'transparent';
