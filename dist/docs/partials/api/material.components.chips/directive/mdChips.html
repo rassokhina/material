@@ -1,0 +1,235 @@
+<div class="doc-content">
+
+
+
+<header class="api-profile-header">
+    
+</header>
+
+
+
+<div layout="row" class="api-options-bar with-icon">
+</div>
+
+
+<div class="api-profile-description">
+  <p><code>&lt;md-chips&gt;</code> is an input component for building lists of strings or objects. The list items are displayed as
+&#39;chips&#39;. This component can make use of an <code>&lt;input&gt;</code> element or an <code>&lt;md-autocomplete&gt;</code> element.</p>
+<p><h3> Pending Features </h3></p>
+<ul style="padding-left:20px;">
+  <ul>Expand input controls: Support md-autocomplete
+    <li>plain <code>&lt;input&gt;</code> tag as child</li>
+    <li>textarea input</li>
+    <li>md-input?</li>
+  </ul>
+
+  <ul>List Manipulation
+    <li>delete item via DEL or backspace keys when selected</li>
+  </ul>
+
+  <ul>Validation
+    <li>de-dupe values (or support duplicates, but fix the ng-repeat duplicate key issue)</li>
+    <li>allow a validation callback</li>
+    <li>hilighting style for invalid chips</li>
+  </ul>
+
+  <ul>Item mutation
+    <li>Support <code>&lt;md-chip-edit&gt;</code> template, show/hide the edit element on tap/click? double tap/double click?
+    </li>
+  </ul>
+
+  <ul>Truncation and Disambiguation (?)
+    <li>Truncate chip text where possible, but do not truncate entries such that two are indistinguishable.</li>
+  </ul>
+
+  <ul>Drag and Drop
+    <li>Drag and drop chips between related <code>&lt;md-chips&gt;</code> elements.
+    </li>
+  </ul>
+</ul>
+
+<p> <span style="font-size:.8em;text-align:center">
+   Warning: This component is a WORK IN PROGRESS. If you use it now,
+   it will probably break on you in the future.
+ </span></p>
+
+</div>
+
+
+<div>
+  
+
+  
+
+  
+  <div class="usage">
+    <h2 id="Usage">Usage</h2>
+  
+    <hljs lang="html">
+  <md-chips
+      ng-model="myItems"
+      placeholder="Add an item"
+      readonly="isReadOnly">
+  </md-chips>
+</hljs>
+  
+  </div>
+  
+<section class="api-section">
+  <h3>
+    
+      Attributes
+    
+  </h3>
+
+<md-list>
+  <md-item>
+    <md-item-content class="dashed-bottom">
+      <div class="api-params-label api-params-title"  flex="20" layout layout-align="center center" >
+        Parameter
+      </div>
+      <div class="api-params-label api-params-title"  flex="15" layout layout-align="center center" block-sm >
+        Type
+      </div>
+      <div class="api-params-content api-params-title" flex     layout="row" layout-align="left center" style="padding-top:15px">
+        Description
+      </div>
+    </md-item-content>
+  </md-item>
+  
+  
+  <md-item class="api-params-item">
+    <md-item-content>
+      <div class="api-params-label" flex="35" flex-gt-sm="20">
+        ng-model
+        
+        <span hide show-sm>
+          
+<code class="api-type label type-hint type-hint-string">string</code><code class="api-type label type-hint type-hint-object">object</code>
+        </span>
+        
+      </div>
+      <div class="api-params-label" hide-sm flex="15">
+        
+<code class="api-type label type-hint type-hint-string">string</code><code class="api-type label type-hint type-hint-object">object</code>
+      </div>
+      <div class="api-params-content" flex>
+        <p><p>A model to bind the list of items to</p>
+
+        
+        </p>
+      </div>
+    </md-item-content>
+  </md-item>
+  
+  <md-item class="api-params-item">
+    <md-item-content>
+      <div class="api-params-label" flex="35" flex-gt-sm="20">
+        placeholder
+        
+        <span hide show-sm>
+          
+<code class="api-type label type-hint type-hint-string">string</code>
+        </span>
+        <div><em>(optional)</em></div>
+      </div>
+      <div class="api-params-label" hide-sm flex="15">
+        
+<code class="api-type label type-hint type-hint-string">string</code>
+      </div>
+      <div class="api-params-content" flex>
+        <p><p>Placeholder text that will be forwarded to the input.</p>
+
+        
+        </p>
+      </div>
+    </md-item-content>
+  </md-item>
+  
+  <md-item class="api-params-item">
+    <md-item-content>
+      <div class="api-params-label" flex="35" flex-gt-sm="20">
+        secondary-placeholder
+        
+        <span hide show-sm>
+          
+<code class="api-type label type-hint type-hint-string">string</code>
+        </span>
+        <div><em>(optional)</em></div>
+      </div>
+      <div class="api-params-label" hide-sm flex="15">
+        
+<code class="api-type label type-hint type-hint-string">string</code>
+      </div>
+      <div class="api-params-content" flex>
+        <p><p>Placeholder text that will be forwarded to the input, displayed when there
+   is at least on item in the list</p>
+
+        
+        </p>
+      </div>
+    </md-item-content>
+  </md-item>
+  
+  <md-item class="api-params-item">
+    <md-item-content>
+      <div class="api-params-label" flex="35" flex-gt-sm="20">
+        readonly
+        
+        <span hide show-sm>
+          
+<code class="api-type label type-hint type-hint-boolean">boolean</code>
+        </span>
+        <div><em>(optional)</em></div>
+      </div>
+      <div class="api-params-label" hide-sm flex="15">
+        
+<code class="api-type label type-hint type-hint-boolean">boolean</code>
+      </div>
+      <div class="api-params-content" flex>
+        <p><p>Disables list manipulation (deleting or adding list items), hiding the input and delete
+   buttons</p>
+
+        
+        </p>
+      </div>
+    </md-item-content>
+  </md-item>
+  
+  <md-item class="api-params-item">
+    <md-item-content>
+      <div class="api-params-label" flex="35" flex-gt-sm="20">
+        md-chip-append
+        
+        <span hide show-sm>
+          
+<code class="api-type label type-hint type-hint-expression">expression</code>
+        </span>
+        
+      </div>
+      <div class="api-params-label" hide-sm flex="15">
+        
+<code class="api-type label type-hint type-hint-expression">expression</code>
+      </div>
+      <div class="api-params-content" flex>
+        <p><p>An expression expected to convert the input string into an object when adding
+   a chip.</p>
+
+        
+        </p>
+      </div>
+    </md-item-content>
+  </md-item>
+  
+
+</md-list>
+
+</section>
+  
+
+
+  
+</div>
+
+
+</div>

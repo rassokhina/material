@@ -1,0 +1,389 @@
+<div class="doc-content">
+
+
+
+<header class="api-profile-header">
+    
+</header>
+
+
+
+<div layout="row" class="api-options-bar with-icon">
+</div>
+
+
+<div class="api-profile-description">
+  <p><code>&lt;md-autocomplete&gt;</code> is a special input component with a drop-down of all possible matches to a custom query.
+This component allows you to provide real-time suggestions as the user types in the input area.</p>
+
+</div>
+
+
+<div>
+  
+
+  
+
+  
+  <div class="usage">
+    <h2 id="Usage">Usage</h2>
+  
+    <hljs lang="html">
+  <md-autocomplete
+      md-selected-item="selectedItem"
+      md-search-text="searchText"
+      md-items="item in getMatches(searchText)"
+      md-item-text="item.display">
+    <span md-highlight-text="searchText">{{item.display}}</span>
+  </md-autocomplete>
+</hljs>
+  
+  </div>
+  
+<section class="api-section">
+  <h3>
+    
+      Attributes
+    
+  </h3>
+
+<md-list>
+  <md-item>
+    <md-item-content class="dashed-bottom">
+      <div class="api-params-label api-params-title"  flex="20" layout layout-align="center center" >
+        Parameter
+      </div>
+      <div class="api-params-label api-params-title"  flex="15" layout layout-align="center center" block-sm >
+        Type
+      </div>
+      <div class="api-params-content api-params-title" flex     layout="row" layout-align="left center" style="padding-top:15px">
+        Description
+      </div>
+    </md-item-content>
+  </md-item>
+  
+  
+  <md-item class="api-params-item">
+    <md-item-content>
+      <div class="api-params-label" flex="35" flex-gt-sm="20">
+        md-search-text
+        
+        <span hide show-sm>
+          
+<code class="api-type label type-hint type-hint-string">string</code>
+        </span>
+        <div><em>(optional)</em></div>
+      </div>
+      <div class="api-params-label" hide-sm flex="15">
+        
+<code class="api-type label type-hint type-hint-string">string</code>
+      </div>
+      <div class="api-params-content" flex>
+        <p><p>A model to bind the search query text to</p>
+
+        
+        </p>
+      </div>
+    </md-item-content>
+  </md-item>
+  
+  <md-item class="api-params-item">
+    <md-item-content>
+      <div class="api-params-label" flex="35" flex-gt-sm="20">
+        md-selected-item
+        
+        <span hide show-sm>
+          
+<code class="api-type label type-hint type-hint-object">object</code>
+        </span>
+        <div><em>(optional)</em></div>
+      </div>
+      <div class="api-params-label" hide-sm flex="15">
+        
+<code class="api-type label type-hint type-hint-object">object</code>
+      </div>
+      <div class="api-params-content" flex>
+        <p><p>A model to bind the selected item to</p>
+
+        
+        </p>
+      </div>
+    </md-item-content>
+  </md-item>
+  
+  <md-item class="api-params-item">
+    <md-item-content>
+      <div class="api-params-label" flex="35" flex-gt-sm="20">
+        md-items
+        
+        <span hide show-sm>
+          
+<code class="api-type label type-hint type-hint-expression">expression</code>
+        </span>
+        
+      </div>
+      <div class="api-params-label" hide-sm flex="15">
+        
+<code class="api-type label type-hint type-hint-expression">expression</code>
+      </div>
+      <div class="api-params-content" flex>
+        <p><p>An expression in the format of <code>item in items</code> to iterate over matches for your search.</p>
+
+        
+        </p>
+      </div>
+    </md-item-content>
+  </md-item>
+  
+  <md-item class="api-params-item">
+    <md-item-content>
+      <div class="api-params-label" flex="35" flex-gt-sm="20">
+        md-item-text
+        
+        <span hide show-sm>
+          
+<code class="api-type label type-hint type-hint-string">string</code>
+        </span>
+        <div><em>(optional)</em></div>
+      </div>
+      <div class="api-params-label" hide-sm flex="15">
+        
+<code class="api-type label type-hint type-hint-string">string</code>
+      </div>
+      <div class="api-params-content" flex>
+        <p><p>An expression that will convert your object to a single string.</p>
+
+        
+        </p>
+      </div>
+    </md-item-content>
+  </md-item>
+  
+  <md-item class="api-params-item">
+    <md-item-content>
+      <div class="api-params-label" flex="35" flex-gt-sm="20">
+        placeholder
+        
+        <span hide show-sm>
+          
+<code class="api-type label type-hint type-hint-string">string</code>
+        </span>
+        <div><em>(optional)</em></div>
+      </div>
+      <div class="api-params-label" hide-sm flex="15">
+        
+<code class="api-type label type-hint type-hint-string">string</code>
+      </div>
+      <div class="api-params-content" flex>
+        <p><p>Placeholder text that will be forwarded to the input.</p>
+
+        
+        </p>
+      </div>
+    </md-item-content>
+  </md-item>
+  
+  <md-item class="api-params-item">
+    <md-item-content>
+      <div class="api-params-label" flex="35" flex-gt-sm="20">
+        md-no-cache
+        
+        <span hide show-sm>
+          
+<code class="api-type label type-hint type-hint-boolean">boolean</code>
+        </span>
+        <div><em>(optional)</em></div>
+      </div>
+      <div class="api-params-label" hide-sm flex="15">
+        
+<code class="api-type label type-hint type-hint-boolean">boolean</code>
+      </div>
+      <div class="api-params-content" flex>
+        <p><p>Disables the internal caching that happens in autocomplete</p>
+
+        
+        </p>
+      </div>
+    </md-item-content>
+  </md-item>
+  
+  <md-item class="api-params-item">
+    <md-item-content>
+      <div class="api-params-label" flex="35" flex-gt-sm="20">
+        md-selected-item-change
+        
+        <span hide show-sm>
+          
+<code class="api-type label type-hint type-hint-expression">expression</code>
+        </span>
+        
+      </div>
+      <div class="api-params-label" hide-sm flex="15">
+        
+<code class="api-type label type-hint type-hint-expression">expression</code>
+      </div>
+      <div class="api-params-content" flex>
+        <p><p>An expression to be run each time a new item is selected</p>
+
+        
+        </p>
+      </div>
+    </md-item-content>
+  </md-item>
+  
+  <md-item class="api-params-item">
+    <md-item-content>
+      <div class="api-params-label" flex="35" flex-gt-sm="20">
+        md-search-text-change
+        
+        <span hide show-sm>
+          
+<code class="api-type label type-hint type-hint-expression">expression</code>
+        </span>
+        
+      </div>
+      <div class="api-params-label" hide-sm flex="15">
+        
+<code class="api-type label type-hint type-hint-expression">expression</code>
+      </div>
+      <div class="api-params-content" flex>
+        <p><p>An expression to be run each time the search text updates</p>
+
+        
+        </p>
+      </div>
+    </md-item-content>
+  </md-item>
+  
+  <md-item class="api-params-item">
+    <md-item-content>
+      <div class="api-params-label" flex="35" flex-gt-sm="20">
+        ng-disabled
+        
+        <span hide show-sm>
+          
+<code class="api-type label type-hint type-hint-boolean">boolean</code>
+        </span>
+        <div><em>(optional)</em></div>
+      </div>
+      <div class="api-params-label" hide-sm flex="15">
+        
+<code class="api-type label type-hint type-hint-boolean">boolean</code>
+      </div>
+      <div class="api-params-content" flex>
+        <p><p>Determines whether or not to disable the input field</p>
+
+        
+        </p>
+      </div>
+    </md-item-content>
+  </md-item>
+  
+  <md-item class="api-params-item">
+    <md-item-content>
+      <div class="api-params-label" flex="35" flex-gt-sm="20">
+        md-min-length
+        
+        <span hide show-sm>
+          
+<code class="api-type label type-hint type-hint-number">number</code>
+        </span>
+        <div><em>(optional)</em></div>
+      </div>
+      <div class="api-params-label" hide-sm flex="15">
+        
+<code class="api-type label type-hint type-hint-number">number</code>
+      </div>
+      <div class="api-params-content" flex>
+        <p><p>Specifies the minimum length of text before autocomplete will make suggestions</p>
+
+        
+        </p>
+      </div>
+    </md-item-content>
+  </md-item>
+  
+  <md-item class="api-params-item">
+    <md-item-content>
+      <div class="api-params-label" flex="35" flex-gt-sm="20">
+        md-delay
+        
+        <span hide show-sm>
+          
+<code class="api-type label type-hint type-hint-number">number</code>
+        </span>
+        <div><em>(optional)</em></div>
+      </div>
+      <div class="api-params-label" hide-sm flex="15">
+        
+<code class="api-type label type-hint type-hint-number">number</code>
+      </div>
+      <div class="api-params-content" flex>
+        <p><p>Specifies the amount of time (in milliseconds) to wait before looking for results</p>
+
+        
+        </p>
+      </div>
+    </md-item-content>
+  </md-item>
+  
+  <md-item class="api-params-item">
+    <md-item-content>
+      <div class="api-params-label" flex="35" flex-gt-sm="20">
+        md-autofocus
+        
+        <span hide show-sm>
+          
+<code class="api-type label type-hint type-hint-boolean">boolean</code>
+        </span>
+        <div><em>(optional)</em></div>
+      </div>
+      <div class="api-params-label" hide-sm flex="15">
+        
+<code class="api-type label type-hint type-hint-boolean">boolean</code>
+      </div>
+      <div class="api-params-content" flex>
+        <p><p>If true, will immediately focus the input element</p>
+
+        
+        </p>
+      </div>
+    </md-item-content>
+  </md-item>
+  
+  <md-item class="api-params-item">
+    <md-item-content>
+      <div class="api-params-label" flex="35" flex-gt-sm="20">
+        md-autoselect
+        
+        <span hide show-sm>
+          
+<code class="api-type label type-hint type-hint-boolean">boolean</code>
+        </span>
+        <div><em>(optional)</em></div>
+      </div>
+      <div class="api-params-label" hide-sm flex="15">
+        
+<code class="api-type label type-hint type-hint-boolean">boolean</code>
+      </div>
+      <div class="api-params-content" flex>
+        <p><p>If true, the first item will be selected by default</p>
+
+        
+        </p>
+      </div>
+    </md-item-content>
+  </md-item>
+  
+
+</md-list>
+
+</section>
+  
+
+
+  
+</div>
+
+
+</div>

@@ -1,0 +1,176 @@
+<div class="doc-content">
+
+
+
+<header class="api-profile-header">
+    
+</header>
+
+
+
+<div layout="row" class="api-options-bar with-icon">
+</div>
+
+
+<div class="api-profile-description">
+  <p>The <code>md-icon</code> directive is an markup element useful for showing an icon based on a font-face
+or a SVG. Both external SVGs (via URLs) or cached SVG from icon sets can be
+easily loaded and used.</p>
+
+</div>
+
+
+<div>
+  
+
+  
+
+  
+  <div class="usage">
+    <h2 id="Usage">Usage</h2>
+  
+    <hljs lang="html">
+ <md-icon md-font-icon="android"          alt="android " ></md-icon>
+ <md-icon md-svg-icon="action:android"    alt="android " ></md-icon>
+ <md-icon md-svg-src="/android.svg"       alt="android " ></md-icon>
+ <md-icon md-svg-src="{{ getAndroid() }}" alt="android " ></md-icon>
+</hljs>
+  
+  </div>
+  
+<section class="api-section">
+  <h3>
+    
+      Attributes
+    
+  </h3>
+
+<md-list>
+  <md-item>
+    <md-item-content class="dashed-bottom">
+      <div class="api-params-label api-params-title"  flex="20" layout layout-align="center center" >
+        Parameter
+      </div>
+      <div class="api-params-label api-params-title"  flex="15" layout layout-align="center center" block-sm >
+        Type
+      </div>
+      <div class="api-params-content api-params-title" flex     layout="row" layout-align="left center" style="padding-top:15px">
+        Description
+      </div>
+    </md-item-content>
+  </md-item>
+  
+  
+  <md-item class="api-params-item">
+    <md-item-content>
+      <div class="api-params-label" flex="35" flex-gt-sm="20">
+        md-svg-src
+        
+        <span hide show-sm>
+          
+<code class="api-type label type-hint type-hint-string">string</code>
+        </span>
+        
+      </div>
+      <div class="api-params-label" hide-sm flex="15">
+        
+<code class="api-type label type-hint type-hint-string">string</code>
+      </div>
+      <div class="api-params-content" flex>
+        <p><p>String URL [or expression ] used to load, cache, and display an external SVG.</p>
+
+        
+        </p>
+      </div>
+    </md-item-content>
+  </md-item>
+  
+  <md-item class="api-params-item">
+    <md-item-content>
+      <div class="api-params-label" flex="35" flex-gt-sm="20">
+        md-svg-icon
+        
+        <span hide show-sm>
+          
+<code class="api-type label type-hint type-hint-string">string</code>
+        </span>
+        
+      </div>
+      <div class="api-params-label" hide-sm flex="15">
+        
+<code class="api-type label type-hint type-hint-string">string</code>
+      </div>
+      <div class="api-params-content" flex>
+        <p><p>String name used for lookup of the icon from the internal cache; interpolated strings or
+expressions may also be used. Specific set names can be used with the syntax <code>&lt;set name&gt;:&lt;icon name&gt;</code>.<br/><br/>
+To use icon sets, developers are required to pre-register the sets using the <code>$mdIconProvider</code> service.</p>
+
+        
+        </p>
+      </div>
+    </md-item-content>
+  </md-item>
+  
+  <md-item class="api-params-item">
+    <md-item-content>
+      <div class="api-params-label" flex="35" flex-gt-sm="20">
+        md-font-icon
+        
+        <span hide show-sm>
+          
+<code class="api-type label type-hint type-hint-string">string</code>
+        </span>
+        
+      </div>
+      <div class="api-params-label" hide-sm flex="15">
+        
+<code class="api-type label type-hint type-hint-string">string</code>
+      </div>
+      <div class="api-params-content" flex>
+        <p><p>String name of CSS icon associated with the font-face will be used
+to render the icon. Requires the fonts and the named CSS styles to be preloaded.</p>
+
+        
+        </p>
+      </div>
+    </md-item-content>
+  </md-item>
+  
+  <md-item class="api-params-item">
+    <md-item-content>
+      <div class="api-params-label" flex="35" flex-gt-sm="20">
+        alt
+        
+        <span hide show-sm>
+          
+<code class="api-type label type-hint type-hint-string">string</code>
+        </span>
+        <div><em>(optional)</em></div>
+      </div>
+      <div class="api-params-label" hide-sm flex="15">
+        
+<code class="api-type label type-hint type-hint-string">string</code>
+      </div>
+      <div class="api-params-content" flex>
+        <p><p>Labels icon for accessibility. If an empty string is provided, icon
+will be hidden from accessibility layer with <code>aria-hidden=&quot;true&quot;</code>. If there&#39;s no alt on the icon
+nor a label on the parent element, a warning will be logged to the console.</p>
+
+        
+        </p>
+      </div>
+    </md-item-content>
+  </md-item>
+  
+
+</md-list>
+
+</section>
+  
+
+
+  
+</div>
+
+
+</div>

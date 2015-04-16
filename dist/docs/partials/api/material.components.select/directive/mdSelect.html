@@ -1,0 +1,156 @@
+<div class="doc-content">
+
+
+
+<header class="api-profile-header">
+    
+</header>
+
+
+
+<div layout="row" class="api-options-bar with-icon">
+</div>
+
+
+<div class="api-profile-description">
+  <p>Displays a select box, bound to an ng-model.</p>
+
+</div>
+
+
+<div>
+  
+
+  
+
+  
+  <div class="usage">
+    <h2 id="Usage">Usage</h2>
+  
+    <p>With a placeholder (label is added dynamically)</p>
+<hljs lang="html">
+  <md-select
+    ng-model="someModel"
+    placeholder="Select a state">
+    <md-option ng-value="opt" ng-repeat="opt in neighborhoods2">{{ opt }}</md-option>
+  </md-select>
+</hljs>
+
+<p>With an explicit label</p>
+<hljs lang="html">
+  <md-select
+    ng-model="someModel">
+    <md-select-label>Select a state</md-select-label>
+    <md-option ng-value="opt" ng-repeat="opt in neighborhoods2">{{ opt }}</md-option>
+  </md-select>
+</hljs>
+  
+  </div>
+  
+<section class="api-section">
+  <h3>
+    
+      Attributes
+    
+  </h3>
+
+<md-list>
+  <md-item>
+    <md-item-content class="dashed-bottom">
+      <div class="api-params-label api-params-title"  flex="20" layout layout-align="center center" >
+        Parameter
+      </div>
+      <div class="api-params-label api-params-title"  flex="15" layout layout-align="center center" block-sm >
+        Type
+      </div>
+      <div class="api-params-content api-params-title" flex     layout="row" layout-align="left center" style="padding-top:15px">
+        Description
+      </div>
+    </md-item-content>
+  </md-item>
+  
+  
+  <md-item class="api-params-item">
+    <md-item-content>
+      <div class="api-params-label" flex="35" flex-gt-sm="20">
+        ng-model
+        
+        <span hide show-sm>
+          
+<code class="api-type label type-hint type-hint-expression">expression</code>
+        </span>
+        
+      </div>
+      <div class="api-params-label" hide-sm flex="15">
+        
+<code class="api-type label type-hint type-hint-expression">expression</code>
+      </div>
+      <div class="api-params-content" flex>
+        <p><p>The model!</p>
+
+        
+        </p>
+      </div>
+    </md-item-content>
+  </md-item>
+  
+  <md-item class="api-params-item">
+    <md-item-content>
+      <div class="api-params-label" flex="35" flex-gt-sm="20">
+        multiple
+        
+        <span hide show-sm>
+          
+<code class="api-type label type-hint type-hint-boolean">boolean</code>
+        </span>
+        <div><em>(optional)</em></div>
+      </div>
+      <div class="api-params-label" hide-sm flex="15">
+        
+<code class="api-type label type-hint type-hint-boolean">boolean</code>
+      </div>
+      <div class="api-params-content" flex>
+        <p><p>Whether it&#39;s multiple.</p>
+
+        
+        </p>
+      </div>
+    </md-item-content>
+  </md-item>
+  
+  <md-item class="api-params-item">
+    <md-item-content>
+      <div class="api-params-label" flex="35" flex-gt-sm="20">
+        placeholder
+        
+        <span hide show-sm>
+          
+<code class="api-type label type-hint type-hint-string">string</code>
+        </span>
+        <div><em>(optional)</em></div>
+      </div>
+      <div class="api-params-label" hide-sm flex="15">
+        
+<code class="api-type label type-hint type-hint-string">string</code>
+      </div>
+      <div class="api-params-content" flex>
+        <p><p>Placeholder hint text.</p>
+
+        
+        </p>
+      </div>
+    </md-item-content>
+  </md-item>
+  
+
+</md-list>
+
+</section>
+  
+
+
+  
+</div>
+
+
+</div>

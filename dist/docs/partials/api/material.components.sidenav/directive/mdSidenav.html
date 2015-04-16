@@ -1,0 +1,179 @@
+<div class="doc-content">
+
+
+
+<header class="api-profile-header">
+    
+</header>
+
+
+
+<div layout="row" class="api-options-bar with-icon">
+</div>
+
+
+<div class="api-profile-description">
+  <p>A Sidenav component that can be opened and closed programatically.</p>
+<p>By default, upon opening it will slide out on top of the main content area.</p>
+
+</div>
+
+
+<div>
+  
+
+  
+
+  
+  <div class="usage">
+    <h2 id="Usage">Usage</h2>
+  
+    <hljs lang="html">
+<div layout="row" ng-controller="MyController">
+  <md-sidenav md-component-id="left" class="md-sidenav-left">
+    Left Nav!
+  </md-sidenav>
+
+  <md-content>
+    Center Content
+    <md-button ng-click="openLeftMenu()">
+      Open Left Menu
+    </md-button>
+  </md-content>
+
+  <md-sidenav md-component-id="right"
+    md-is-locked-open="$mdMedia('min-width: 333px')"
+    class="md-sidenav-right">
+    Right Nav!
+  </md-sidenav>
+</div>
+</hljs>
+
+<hljs lang="js">
+var app = angular.module(&#39;myApp&#39;, [&#39;ngMaterial&#39;]);
+app.controller(&#39;MyController&#39;, function($scope, $mdSidenav) {
+  $scope.openLeftMenu = function() {
+    $mdSidenav(&#39;left&#39;).toggle();
+  };
+});
+</hljs>
+  
+  </div>
+  
+<section class="api-section">
+  <h3>
+    
+      Attributes
+    
+  </h3>
+
+<md-list>
+  <md-item>
+    <md-item-content class="dashed-bottom">
+      <div class="api-params-label api-params-title"  flex="20" layout layout-align="center center" >
+        Parameter
+      </div>
+      <div class="api-params-label api-params-title"  flex="15" layout layout-align="center center" block-sm >
+        Type
+      </div>
+      <div class="api-params-content api-params-title" flex     layout="row" layout-align="left center" style="padding-top:15px">
+        Description
+      </div>
+    </md-item-content>
+  </md-item>
+  
+  
+  <md-item class="api-params-item">
+    <md-item-content>
+      <div class="api-params-label" flex="35" flex-gt-sm="20">
+        md-is-open
+        
+        <span hide show-sm>
+          
+<code class="api-type label type-hint type-hint-expression">expression</code>
+        </span>
+        <div><em>(optional)</em></div>
+      </div>
+      <div class="api-params-label" hide-sm flex="15">
+        
+<code class="api-type label type-hint type-hint-expression">expression</code>
+      </div>
+      <div class="api-params-content" flex>
+        <p><p>A model bound to whether the sidenav is opened.</p>
+
+        
+        </p>
+      </div>
+    </md-item-content>
+  </md-item>
+  
+  <md-item class="api-params-item">
+    <md-item-content>
+      <div class="api-params-label" flex="35" flex-gt-sm="20">
+        md-component-id
+        
+        <span hide show-sm>
+          
+<code class="api-type label type-hint type-hint-string">string</code>
+        </span>
+        <div><em>(optional)</em></div>
+      </div>
+      <div class="api-params-label" hide-sm flex="15">
+        
+<code class="api-type label type-hint type-hint-string">string</code>
+      </div>
+      <div class="api-params-content" flex>
+        <p><p>componentId to use with $mdSidenav service.</p>
+
+        
+        </p>
+      </div>
+    </md-item-content>
+  </md-item>
+  
+  <md-item class="api-params-item">
+    <md-item-content>
+      <div class="api-params-label" flex="35" flex-gt-sm="20">
+        md-is-locked-open
+        
+        <span hide show-sm>
+          
+<code class="api-type label type-hint type-hint-expression">expression</code>
+        </span>
+        <div><em>(optional)</em></div>
+      </div>
+      <div class="api-params-label" hide-sm flex="15">
+        
+<code class="api-type label type-hint type-hint-expression">expression</code>
+      </div>
+      <div class="api-params-content" flex>
+        <p><p>When this expression evalutes to true,
+the sidenav &#39;locks open&#39;: it falls into the content&#39;s flow instead
+of appearing over it. This overrides the <code>is-open</code> attribute.</p>
+<p>The $mdMedia() service is exposed to the is-locked-open attribute, which
+can be given a media query or one of the <code>sm</code>, <code>gt-sm</code>, <code>md</code>, <code>gt-md</code>, <code>lg</code> or <code>gt-lg</code> presets.
+Examples:</p>
+<ul>
+<li><code>&lt;md-sidenav md-is-locked-open=&quot;shouldLockOpen&quot;&gt;&lt;/md-sidenav&gt;</code></li>
+<li><code>&lt;md-sidenav md-is-locked-open=&quot;$mdMedia(&#39;min-width: 1000px&#39;)&quot;&gt;&lt;/md-sidenav&gt;</code></li>
+<li><code>&lt;md-sidenav md-is-locked-open=&quot;$mdMedia(&#39;sm&#39;)&quot;&gt;&lt;/md-sidenav&gt;</code> (locks open on small screens)</li>
+</ul>
+
+        
+        </p>
+      </div>
+    </md-item-content>
+  </md-item>
+  
+
+</md-list>
+
+</section>
+  
+
+
+  
+</div>
+
+
+</div>

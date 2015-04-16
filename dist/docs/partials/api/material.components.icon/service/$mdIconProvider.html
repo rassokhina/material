@@ -1,0 +1,562 @@
+<div class="doc-content">
+
+
+
+<header class="api-profile-header">
+    
+  
+
+</header>
+
+
+
+<div layout="row" class="api-options-bar with-icon">
+</div>
+
+
+<div class="api-profile-description">
+  <p><code>$mdIconProvider</code> is used only to register icon IDs with URLs. These configuration features allow
+icons and icon sets to be pre-registered and associated with source URLs <strong>before</strong> the <code>&lt;md-icon /&gt;</code>
+directives are compiled.</p>
+<p>Loading of the actual svg files are deferred to on-demand requests and are loaded
+internally by the <code>$mdIcon</code> service using the <code>$http</code> service. When an SVG is requested by name/ID,
+the <code>$mdIcon</code> service searches its registry for the associated source URL;
+that URL is used to on-demand load and parse the SVG dynamically.</p>
+<hljs lang="js">
+  app.config(function($mdIconProvider) {
+
+    // Configure URLs for icons specified by [set:]id.
+
+    $mdIconProvider
+         .defaultIconSet(&#39;my/app/icons.svg&#39;)       // Register a default set of SVG icons
+         .iconSet(&#39;social&#39;, &#39;my/app/social.svg&#39;)   // Register a named icon set of SVGs
+         .icon(&#39;android&#39;, &#39;my/app/android.svg&#39;)    // Register a specific icon (by name)
+         .icon(&#39;work:chair&#39;, &#39;my/app/chair.svg&#39;);  // Register icon in a specific set
+  });
+</hljs>
+
+<p>SVG icons and icon sets can be easily pre-loaded and cached using either (a) a build process or (b) a runtime
+<strong>startup</strong> process (shown below):</p>
+<hljs lang="js">
+  app.config(function($mdIconProvider) {
+
+    // Register a default set of SVG icon definitions
+    $mdIconProvider.defaultIconSet(&#39;my/app/icons.svg&#39;)
+
+  })
+  .run(function($http, $templateCache){
+
+    // Pre-fetch icons sources by URL and cache in the $templateCache...
+    // subsequent $http calls will look there first.
+
+    var urls = [ &#39;imy/app/icons.svg&#39;, &#39;img/icons/android.svg&#39;];
+
+    angular.forEach(urls, function(url) {
+      $http.get(url, {cache: $templateCache});
+    });
+
+  });
+
+</hljs>
+
+<p>NOTE: the loaded SVG data is subsequently cached internally for future requests.</p>
+
+</div>
+
+
+<div>
+  
+
+    
+
+  <h2 id="Usage">Usage</h2>
+  
+    <code>$mdIconProvider();
+</code>
+  
+
+  
+
+  
+<h2>Methods</h2>
+<ul class="methods">
+  <li id="icon">
+    <h3 class="method-function-syntax"><code class="method-function-syntax">$mdIconProvider.icon(id, url, [iconSize]);
+</code></h3>
+    <div><p>Register a source URL for a specific icon name; the name may include optional &#39;icon set&#39; name prefix.
+These icons  will later be retrieved from the cache using <code>$mdIcon( &lt;icon name&gt; )</code></p>
+</div>
+
+    
+    
+<md-list>
+  <md-item>
+    <md-item-content class="dashed-bottom">
+      <div class="api-params-label api-params-title"  flex="20" layout layout-align="center center" >
+        Parameter
+      </div>
+      <div class="api-params-label api-params-title"  flex="15" layout layout-align="center center" block-sm >
+        Type
+      </div>
+      <div class="api-params-content api-params-title" flex     layout="row" layout-align="left center" style="padding-top:15px">
+        Description
+      </div>
+    </md-item-content>
+  </md-item>
+  
+  
+  <md-item class="api-params-item">
+    <md-item-content>
+      <div class="api-params-label" flex="35" flex-gt-sm="20">
+        id
+        
+        <span hide show-sm>
+          
+<code class="api-type label type-hint type-hint-string">string</code>
+        </span>
+        
+      </div>
+      <div class="api-params-label" hide-sm flex="15">
+        
+<code class="api-type label type-hint type-hint-string">string</code>
+      </div>
+      <div class="api-params-content" flex>
+        <p><p>Icon name/id used to register the icon</p>
+
+        
+        </p>
+      </div>
+    </md-item-content>
+  </md-item>
+  
+  <md-item class="api-params-item">
+    <md-item-content>
+      <div class="api-params-label" flex="35" flex-gt-sm="20">
+        url
+        
+        <span hide show-sm>
+          
+<code class="api-type label type-hint type-hint-string">string</code>
+        </span>
+        
+      </div>
+      <div class="api-params-label" hide-sm flex="15">
+        
+<code class="api-type label type-hint type-hint-string">string</code>
+      </div>
+      <div class="api-params-content" flex>
+        <p><p>specifies the external location for the data file. Used internally by <code>$http</code> to load the
+data or as part of the lookup in <code>$templateCache</code> if pre-loading was configured.</p>
+
+        
+        </p>
+      </div>
+    </md-item-content>
+  </md-item>
+  
+  <md-item class="api-params-item">
+    <md-item-content>
+      <div class="api-params-label" flex="35" flex-gt-sm="20">
+        iconSize
+        
+        <span hide show-sm>
+          
+<code class="api-type label type-hint type-hint-string">string</code>
+        </span>
+        <div><em>(optional)</em></div>
+      </div>
+      <div class="api-params-label" hide-sm flex="15">
+        
+<code class="api-type label type-hint type-hint-string">string</code>
+      </div>
+      <div class="api-params-content" flex>
+        <p><p>Number indicating the width and height of the icons in the set. All icons
+in the icon set must be the same size. Default size is 24.</p>
+
+        
+        </p>
+      </div>
+    </md-item-content>
+  </md-item>
+  
+
+</md-list>
+
+    
+
+    
+    
+    
+    <md-list>
+  <md-item>
+    <md-item-content class="dashed-top">
+      <div class="api-params-label api-params-title" layout layout-align="center center" flex="20" flex-sm="20">
+        Returns
+      </div>
+      <div class="api-params-content api-params-title" flex layout="row" layout-align="left center" flex  style="padding-top:15px">
+        Description
+      </div>
+    </md-item-content>
+  </md-item>
+  <md-item>
+    <md-item-content>
+      <div class="api-params-label" flex="20" flex-sm="20">
+        
+<code class="api-type label type-hint type-hint-obj">obj</code>
+      </div>
+      <div class="api-params-content" flex>
+        <p>an <code>$mdIconProvider</code> reference; used to support method call chains for the API</p>
+
+      </div>
+    </md-item-content>
+  </md-item>
+</md-list>
+    
+
+  </li>
+  
+  <li id="iconSet">
+    <h3 class="method-function-syntax"><code class="method-function-syntax">$mdIconProvider.iconSet(id, url, [iconSize]);
+</code></h3>
+    <div><p>Register a source URL for a &#39;named&#39; set of icons; group of SVG definitions where each definition
+has an icon id. Individual icons can be subsequently retrieved from this cached set using
+<code>$mdIcon( &lt;icon set name&gt;:&lt;icon name&gt; )</code></p>
+</div>
+
+    
+    
+<md-list>
+  <md-item>
+    <md-item-content class="dashed-bottom">
+      <div class="api-params-label api-params-title"  flex="20" layout layout-align="center center" >
+        Parameter
+      </div>
+      <div class="api-params-label api-params-title"  flex="15" layout layout-align="center center" block-sm >
+        Type
+      </div>
+      <div class="api-params-content api-params-title" flex     layout="row" layout-align="left center" style="padding-top:15px">
+        Description
+      </div>
+    </md-item-content>
+  </md-item>
+  
+  
+  <md-item class="api-params-item">
+    <md-item-content>
+      <div class="api-params-label" flex="35" flex-gt-sm="20">
+        id
+        
+        <span hide show-sm>
+          
+<code class="api-type label type-hint type-hint-string">string</code>
+        </span>
+        
+      </div>
+      <div class="api-params-label" hide-sm flex="15">
+        
+<code class="api-type label type-hint type-hint-string">string</code>
+      </div>
+      <div class="api-params-content" flex>
+        <p><p>Icon name/id used to register the iconset</p>
+
+        
+        </p>
+      </div>
+    </md-item-content>
+  </md-item>
+  
+  <md-item class="api-params-item">
+    <md-item-content>
+      <div class="api-params-label" flex="35" flex-gt-sm="20">
+        url
+        
+        <span hide show-sm>
+          
+<code class="api-type label type-hint type-hint-string">string</code>
+        </span>
+        
+      </div>
+      <div class="api-params-label" hide-sm flex="15">
+        
+<code class="api-type label type-hint type-hint-string">string</code>
+      </div>
+      <div class="api-params-content" flex>
+        <p><p>specifies the external location for the data file. Used internally by <code>$http</code> to load the
+data or as part of the lookup in <code>$templateCache</code> if pre-loading was configured.</p>
+
+        
+        </p>
+      </div>
+    </md-item-content>
+  </md-item>
+  
+  <md-item class="api-params-item">
+    <md-item-content>
+      <div class="api-params-label" flex="35" flex-gt-sm="20">
+        iconSize
+        
+        <span hide show-sm>
+          
+<code class="api-type label type-hint type-hint-string">string</code>
+        </span>
+        <div><em>(optional)</em></div>
+      </div>
+      <div class="api-params-label" hide-sm flex="15">
+        
+<code class="api-type label type-hint type-hint-string">string</code>
+      </div>
+      <div class="api-params-content" flex>
+        <p><p>Number indicating the width and height of the icons in the set. All icons
+in the icon set must be the same size. Default size is 24.</p>
+
+        
+        </p>
+      </div>
+    </md-item-content>
+  </md-item>
+  
+
+</md-list>
+
+    
+
+    
+    
+    
+    <md-list>
+  <md-item>
+    <md-item-content class="dashed-top">
+      <div class="api-params-label api-params-title" layout layout-align="center center" flex="20" flex-sm="20">
+        Returns
+      </div>
+      <div class="api-params-content api-params-title" flex layout="row" layout-align="left center" flex  style="padding-top:15px">
+        Description
+      </div>
+    </md-item-content>
+  </md-item>
+  <md-item>
+    <md-item-content>
+      <div class="api-params-label" flex="20" flex-sm="20">
+        
+<code class="api-type label type-hint type-hint-obj">obj</code>
+      </div>
+      <div class="api-params-content" flex>
+        <p>an <code>$mdIconProvider</code> reference; used to support method call chains for the API</p>
+
+      </div>
+    </md-item-content>
+  </md-item>
+</md-list>
+    
+
+  </li>
+  
+  <li id="defaultIconSet">
+    <h3 class="method-function-syntax"><code class="method-function-syntax">$mdIconProvider.defaultIconSet(url, [iconSize]);
+</code></h3>
+    <div><p>Register a source URL for the default &#39;named&#39; set of icons. Unless explicitly registered,
+subsequent lookups of icons will failover to search this &#39;default&#39; icon set.
+Icon can be retrieved from this cached, default set using <code>$mdIcon( &lt;icon name&gt; )</code></p>
+</div>
+
+    
+    
+<md-list>
+  <md-item>
+    <md-item-content class="dashed-bottom">
+      <div class="api-params-label api-params-title"  flex="20" layout layout-align="center center" >
+        Parameter
+      </div>
+      <div class="api-params-label api-params-title"  flex="15" layout layout-align="center center" block-sm >
+        Type
+      </div>
+      <div class="api-params-content api-params-title" flex     layout="row" layout-align="left center" style="padding-top:15px">
+        Description
+      </div>
+    </md-item-content>
+  </md-item>
+  
+  
+  <md-item class="api-params-item">
+    <md-item-content>
+      <div class="api-params-label" flex="35" flex-gt-sm="20">
+        url
+        
+        <span hide show-sm>
+          
+<code class="api-type label type-hint type-hint-string">string</code>
+        </span>
+        
+      </div>
+      <div class="api-params-label" hide-sm flex="15">
+        
+<code class="api-type label type-hint type-hint-string">string</code>
+      </div>
+      <div class="api-params-content" flex>
+        <p><p>specifies the external location for the data file. Used internally by <code>$http</code> to load the
+data or as part of the lookup in <code>$templateCache</code> if pre-loading was configured.</p>
+
+        
+        </p>
+      </div>
+    </md-item-content>
+  </md-item>
+  
+  <md-item class="api-params-item">
+    <md-item-content>
+      <div class="api-params-label" flex="35" flex-gt-sm="20">
+        iconSize
+        
+        <span hide show-sm>
+          
+<code class="api-type label type-hint type-hint-string">string</code>
+        </span>
+        <div><em>(optional)</em></div>
+      </div>
+      <div class="api-params-label" hide-sm flex="15">
+        
+<code class="api-type label type-hint type-hint-string">string</code>
+      </div>
+      <div class="api-params-content" flex>
+        <p><p>Number indicating the width and height of the icons in the set. All icons
+in the icon set must be the same size. Default size is 24.</p>
+
+        
+        </p>
+      </div>
+    </md-item-content>
+  </md-item>
+  
+
+</md-list>
+
+    
+
+    
+    
+    
+    <md-list>
+  <md-item>
+    <md-item-content class="dashed-top">
+      <div class="api-params-label api-params-title" layout layout-align="center center" flex="20" flex-sm="20">
+        Returns
+      </div>
+      <div class="api-params-content api-params-title" flex layout="row" layout-align="left center" flex  style="padding-top:15px">
+        Description
+      </div>
+    </md-item-content>
+  </md-item>
+  <md-item>
+    <md-item-content>
+      <div class="api-params-label" flex="20" flex-sm="20">
+        
+<code class="api-type label type-hint type-hint-obj">obj</code>
+      </div>
+      <div class="api-params-content" flex>
+        <p>an <code>$mdIconProvider</code> reference; used to support method call chains for the API</p>
+
+      </div>
+    </md-item-content>
+  </md-item>
+</md-list>
+    
+
+  </li>
+  
+  <li id="defaultIconSize">
+    <h3 class="method-function-syntax"><code class="method-function-syntax">$mdIconProvider.defaultIconSize(iconSize);
+</code></h3>
+    <div><p>While <code>&lt;md-icon /&gt;</code> markup can also be style with sizing CSS, this method configures
+the default width <strong>and</strong> height used for all icons; unless overridden by specific CSS.
+The default sizing is (24px, 24px).</p>
+</div>
+
+    
+    
+<md-list>
+  <md-item>
+    <md-item-content class="dashed-bottom">
+      <div class="api-params-label api-params-title"  flex="20" layout layout-align="center center" >
+        Parameter
+      </div>
+      <div class="api-params-label api-params-title"  flex="15" layout layout-align="center center" block-sm >
+        Type
+      </div>
+      <div class="api-params-content api-params-title" flex     layout="row" layout-align="left center" style="padding-top:15px">
+        Description
+      </div>
+    </md-item-content>
+  </md-item>
+  
+  
+  <md-item class="api-params-item">
+    <md-item-content>
+      <div class="api-params-label" flex="35" flex-gt-sm="20">
+        iconSize
+        
+        <span hide show-sm>
+          
+<code class="api-type label type-hint type-hint-string">string</code>
+        </span>
+        
+      </div>
+      <div class="api-params-label" hide-sm flex="15">
+        
+<code class="api-type label type-hint type-hint-string">string</code>
+      </div>
+      <div class="api-params-content" flex>
+        <p><p>Number indicating the width and height of the icons in the set. All icons
+in the icon set must be the same size. Default size is 24.</p>
+
+        
+        </p>
+      </div>
+    </md-item-content>
+  </md-item>
+  
+
+</md-list>
+
+    
+
+    
+    
+    
+    <md-list>
+  <md-item>
+    <md-item-content class="dashed-top">
+      <div class="api-params-label api-params-title" layout layout-align="center center" flex="20" flex-sm="20">
+        Returns
+      </div>
+      <div class="api-params-content api-params-title" flex layout="row" layout-align="left center" flex  style="padding-top:15px">
+        Description
+      </div>
+    </md-item-content>
+  </md-item>
+  <md-item>
+    <md-item-content>
+      <div class="api-params-label" flex="20" flex-sm="20">
+        
+<code class="api-type label type-hint type-hint-obj">obj</code>
+      </div>
+      <div class="api-params-content" flex>
+        <p>an <code>$mdIconProvider</code> reference; used to support method call chains for the API</p>
+
+      </div>
+    </md-item-content>
+  </md-item>
+</md-list>
+    
+
+  </li>
+  </ul>
+  
+  
+
+
+
+  
+</div>
+
+
+</div>
