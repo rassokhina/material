@@ -1,10 +1,12 @@
 md-checkbox.md-THEME_NAME-theme {
-
+  .md-label {
+    color: '{{foreground-2}}';
+  }
   .md-ripple {
     color: '{{accent-600}}';
   }
   &.md-checked .md-ripple {
-    color: '{{background-600}}';
+    color: '{{foreground-2}}';
   }
 
   .md-icon {
@@ -15,16 +17,16 @@ md-checkbox.md-THEME_NAME-theme {
   }
 
   &.md-checked .md-icon:after {
-    border-color: '{{background-200}}';
+    border-color: '{{foreground-2}}';
   }
 
   &:not([disabled]) {
     &.md-primary {
       .md-ripple {
-        color: '{{primary-600}}';
+        color: '{{foreground-2}}';
       }
       &.md-checked .md-ripple {
-        color: '{{background-600}}';
+        color: '{{foreground-2}}';
       }
 
       .md-icon {
@@ -35,7 +37,7 @@ md-checkbox.md-THEME_NAME-theme {
       }
 
       &.md-checked .md-icon:after {
-        border-color: '{{background-200}}';
+        border-color: '{{foreground-2}}';
       }
     }
 

@@ -1,3 +1,18 @@
 md-content.md-THEME_NAME-theme {
   background-color: '{{background-hue-3}}';
+  .primary-color-100{
+    background-color: '{{primary-100}}';
+  }
+   .primary-color-200{
+    background-color: '{{primary-200}}';
+  }
+   .primary-color-300{
+    background-color: '{{primary-300}}';
+  }
+  .primary-color-800{
+    background-color: '{{primary-800}}';
+  }
+   .background-foreground-2{
+    background-color: '{{foreground-2}}';
+  }
 }
