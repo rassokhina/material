@@ -4,33 +4,34 @@ md-tabs.md-THEME_NAME-theme {
     border-color: transparent;
   }
   md-pagination-wrapper{
-	border-color: '{{primary-300}}';
+	border-color: '{{foreground-2}}';
   }
   .md-paginator md-icon {
     color: '{{primary-color}}';
   }
 
   md-ink-bar {
-    color: '{{accent-color}}';
-    background: '{{accent-color}}';
   }
 
   .md-tab {
     color: '{{foreground-2}}';
-	background-color: '{{primary-100}}';
+    border-bottom-color: '{{foreground-2}}';  
+    border-top-color: '{{primary-50}}';  
+    border-left-color: '{{primary-50}}';  
+    border-right-color: '{{primary-50}};
     &[disabled] {
-      color: '{{foreground-3}}';
+      color: '{{primary-50}}';
     }
     &.md-active, &.md-focus {
       color: '{{foreground-2}}';
-	  background-color: '{{primary-300}}';
+      border-top-color: '{{primary-500}}';    
+      border-left-color: '{{foreground-2}}';    
+      border-right-color: '{{foreground-2}}
     }
     &.md-focus {
-      background: '{{primary-contrast}}';
 	  color: '{{foreground-1}}';
     }
     .md-ripple-container {
-      color: '{{primary-contrast}}';
     }
   }
 
@@ -40,7 +41,7 @@ md-tabs.md-THEME_NAME-theme {
     }
 
     md-tab:not([disabled]) {
-      color: '{{accent-100}}';
+      color: '{{foreground-2}}';
       &.md-active, &.md-focus {
         color: '{{accent-contrast}}';
       }
