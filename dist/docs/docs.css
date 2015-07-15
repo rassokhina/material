@@ -6173,8 +6173,8 @@ md-tabs {
   display: block;
   margin: 15px;
   border-radius: 2px;
-  overflow: hidden;
-  position: relative; }
+  position: relative;
+  width: 100%; }
   md-tabs:not(.md-no-tab-content) {
     min-height: 248px; }
   md-tabs[md-align-tabs="bottom"] {
@@ -6220,9 +6220,8 @@ md-tabs {
         content: attr(label); }
     md-tabs md-tabs-wrapper .md-tab {
       margin-left: 0px;
-      margin-right: 4px;
-      padding: 10px 32px;
-      border-radius: 5px 5px 0px 0px;
+      margin-right: 0px;
+      padding: 10px 0px;
       font-size: 16px;
       text-align: center;
       line-height: 24px;
@@ -6231,12 +6230,18 @@ md-tabs {
       white-space: nowrap;
       position: relative;
       float: left;
-      font-weight: 600; }
+      font-weight: 600;
+      border-top: 6px solid;
+      border-left: 1px solid;
+      border-right: 1px solid;
+      border-bottom: 1px solid;
+      width: 14%; }
       md-tabs md-tabs-wrapper .md-tab.md-focus {
         box-shadow: none;
         outline: none; }
       md-tabs md-tabs-wrapper .md-tab.md-active {
-        cursor: default; }
+        cursor: default;
+        border-bottom: 0px; }
       md-tabs md-tabs-wrapper .md-tab.md-disabled {
         pointer-events: none;
         -ms-touch-action: pan-y;
@@ -6246,7 +6251,6 @@ md-tabs {
             -ms-user-select: none;
                 user-select: none;
         -webkit-user-drag: none;
-        opacity: 0.5;
         cursor: default; }
       md-tabs md-tabs-wrapper .md-tab.ng-leave {
         transition: none; }
@@ -6293,14 +6297,10 @@ md-tabs {
         content: '';
         display: table;
         clear: both; }
-      md-tabs md-tabs-wrapper md-tabs-canvas.md-paginated {
-        margin: 0 16px; }
     md-tabs md-tabs-wrapper md-pagination-wrapper {
       display: block;
       transition: left 0.4s cubic-bezier(0.35, 0, 0.25, 1);
-      position: relative;
-      width: 999999px;
-      border-bottom: 1px solid; }
+      position: relative; }
       md-tabs md-tabs-wrapper md-pagination-wrapper:after {
         content: '';
         display: table;
@@ -6324,8 +6324,7 @@ md-tabs {
     top: 48px;
     left: 0;
     right: 0;
-    bottom: 0;
-    overflow: hidden; }
+    bottom: 0; }
     md-tabs md-tabs-content-wrapper md-tab-content {
       display: block;
       position: absolute;
